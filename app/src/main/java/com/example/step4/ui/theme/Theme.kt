@@ -1,58 +1,129 @@
 package com.example.step4.ui.theme
 
-import android.app.Activity
-import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Shapes
+import androidx.compose.material3.Typography
 import androidx.compose.material3.darkColorScheme
-import androidx.compose.material3.dynamicDarkColorScheme
-import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.platform.LocalContext
-
-private val DarkColorScheme = darkColorScheme(
-    primary = Purple80,
-    secondary = PurpleGrey80,
-    tertiary = Pink80
-)
+import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.ReadOnlyComposable
+import androidx.compose.runtime.staticCompositionLocalOf
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 
 private val LightColorScheme = lightColorScheme(
-    primary = Purple40,
-    secondary = PurpleGrey40,
-    tertiary = Pink40
-
-    /* Other default colors to override
-    background = Color(0xFFFFFBFE),
-    surface = Color(0xFFFFFBFE),
-    onPrimary = Color.White,
-    onSecondary = Color.White,
-    onTertiary = Color.White,
-    onBackground = Color(0xFF1C1B1F),
-    onSurface = Color(0xFF1C1B1F),
-    */
+    primary = LightTridoshaColors.deepSage,
+    onPrimary = LightTridoshaColors.onDeepSage,
+    primaryContainer = LightTridoshaColors.sageSoft,
+    onPrimaryContainer = LightTridoshaColors.ink,
+    secondary = LightTridoshaColors.sage,
+    onSecondary = LightTridoshaColors.ink,
+    secondaryContainer = LightTridoshaColors.sageSoft,
+    onSecondaryContainer = LightTridoshaColors.ink,
+    tertiary = LightTridoshaColors.kapha,
+    onTertiary = LightTridoshaColors.ink,
+    background = LightTridoshaColors.cream,
+    onBackground = LightTridoshaColors.ink,
+    surface = LightTridoshaColors.cardBackground,
+    onSurface = LightTridoshaColors.ink,
+    surfaceVariant = LightTridoshaColors.sageSoft,
+    onSurfaceVariant = LightTridoshaColors.muted,
+    outline = LightTridoshaColors.outline,
+    outlineVariant = LightTridoshaColors.outline,
 )
 
+private val DarkColorScheme = darkColorScheme(
+    primary = DarkTridoshaColors.deepSage,
+    onPrimary = DarkTridoshaColors.onDeepSage,
+    primaryContainer = DarkTridoshaColors.sageSoft,
+    onPrimaryContainer = DarkTridoshaColors.ink,
+    secondary = DarkTridoshaColors.sage,
+    onSecondary = DarkTridoshaColors.ink,
+    secondaryContainer = DarkTridoshaColors.sageSoft,
+    onSecondaryContainer = DarkTridoshaColors.ink,
+    tertiary = DarkTridoshaColors.kapha,
+    onTertiary = DarkTridoshaColors.ink,
+    background = DarkTridoshaColors.cream,
+    onBackground = DarkTridoshaColors.ink,
+    surface = DarkTridoshaColors.cardBackground,
+    onSurface = DarkTridoshaColors.ink,
+    surfaceVariant = DarkTridoshaColors.sageSoft,
+    onSurfaceVariant = DarkTridoshaColors.muted,
+    outline = DarkTridoshaColors.outline,
+    outlineVariant = DarkTridoshaColors.outline,
+)
+
+private val TridoshaTypography = Typography(
+    headlineLarge = TextStyle(
+        fontFamily = FontFamily.Serif,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 32.sp,
+        lineHeight = 40.sp,
+    ),
+    headlineMedium = TextStyle(
+        fontFamily = FontFamily.Serif,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 28.sp,
+        lineHeight = 36.sp,
+    ),
+    titleLarge = TextStyle(
+        fontFamily = FontFamily.Serif,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 22.sp,
+        lineHeight = 28.sp,
+    ),
+    titleMedium = TextStyle(
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 17.sp,
+        lineHeight = 24.sp,
+        letterSpacing = 0.1.sp,
+    ),
+    bodyLarge = TextStyle(fontSize = 16.sp, lineHeight = 24.sp),
+    bodyMedium = TextStyle(fontSize = 14.sp, lineHeight = 22.sp),
+    labelLarge = TextStyle(fontWeight = FontWeight.Medium, fontSize = 14.sp, lineHeight = 20.sp),
+    labelMedium = TextStyle(
+        fontWeight = FontWeight.Medium,
+        fontSize = 12.sp,
+        lineHeight = 16.sp,
+        letterSpacing = 0.8.sp,
+    ),
+)
+
+private val TridoshaShapes = Shapes(
+    small = RoundedCornerShape(12.dp),
+    medium = RoundedCornerShape(20.dp),
+    large = RoundedCornerShape(26.dp),
+)
+
+private val LocalTridoshaColors = staticCompositionLocalOf { LightTridoshaColors }
+
+/** Access point for the app's semantic palette: `AppTheme.colors.cream`, `AppTheme.colors.ink`, … */
+internal object AppTheme {
+    val colors: TridoshaColors
+        @Composable
+        @ReadOnlyComposable
+        get() = LocalTridoshaColors.current
+}
+
 @Composable
-fun Step4Theme(
+internal fun TridoshaTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    // Dynamic color is available on Android 12+
-    dynamicColor: Boolean = true,
-    content: @Composable () -> Unit
+    content: @Composable () -> Unit,
 ) {
-    val colorScheme = when {
-        dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
-            val context = LocalContext.current
-            if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
-        }
-
-        darkTheme -> DarkColorScheme
-        else -> LightColorScheme
+    val palette = if (darkTheme) DarkTridoshaColors else LightTridoshaColors
+    val scheme = if (darkTheme) DarkColorScheme else LightColorScheme
+    CompositionLocalProvider(LocalTridoshaColors provides palette) {
+        MaterialTheme(
+            colorScheme = scheme,
+            typography = TridoshaTypography,
+            shapes = TridoshaShapes,
+            content = content,
+        )
     }
-
-    MaterialTheme(
-        colorScheme = colorScheme,
-        typography = Typography,
-        content = content
-    )
 }
