@@ -1,4 +1,4 @@
-package com.tridosha.balance.navigation
+package com.example.step4.navigation
 
 /** The four bottom-bar tabs. */
 internal enum class MainTab(val label: String, val emoji: String) {

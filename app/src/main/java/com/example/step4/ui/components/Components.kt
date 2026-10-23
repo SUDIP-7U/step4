@@ -1,4 +1,4 @@
-package com.tridosha.balance.ui.components
+package com.example.step4.ui.components
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.AnimatedVisibilityScope
@@ -51,8 +51,8 @@ import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.tridosha.balance.data.model.Dosha
-import com.tridosha.balance.ui.theme.AppTheme
+import com.example.step4.data.model.Dosha
+import com.example.step4.ui.theme.AppTheme
 
 /** Whether decorative motion (breathing, expand/collapse, screen transitions) is enabled. */
 internal val LocalAnimationsEnabled = compositionLocalOf { true }

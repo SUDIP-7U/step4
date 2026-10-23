@@ -1,4 +1,4 @@
-package com.tridosha.balance.data.model
+package com.example.step4.data.model
 
 internal enum class Dosha(
     val displayName: String,

@@ -1,4 +1,4 @@
-package com.tridosha.balance.ui.screens.more
+package com.example.step4.ui.screens.more
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -38,22 +38,22 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.dp
-import com.tridosha.balance.data.content.ReflectionData
-import com.tridosha.balance.data.model.Dosha
-import com.tridosha.balance.data.model.ReflectionQuestion
-import com.tridosha.balance.ui.components.BulletList
-import com.tridosha.balance.ui.components.DetailHeader
-import com.tridosha.balance.ui.components.DisclaimerCard
-import com.tridosha.balance.ui.components.DoshaChip
-import com.tridosha.balance.ui.components.EmojiBadge
-import com.tridosha.balance.ui.components.ScreenList
-import com.tridosha.balance.ui.components.ScreenTitle
-import com.tridosha.balance.ui.components.SectionLabel
-import com.tridosha.balance.ui.components.TridoshaButton
-import com.tridosha.balance.ui.components.TridoshaCard
-import com.tridosha.balance.ui.components.accentColor
-import com.tridosha.balance.ui.components.softColor
-import com.tridosha.balance.ui.theme.AppTheme
+import com.example.step4.data.content.ReflectionData
+import com.example.step4.data.model.Dosha
+import com.example.step4.data.model.ReflectionQuestion
+import com.example.step4.ui.components.BulletList
+import com.example.step4.ui.components.DetailHeader
+import com.example.step4.ui.components.DisclaimerCard
+import com.example.step4.ui.components.DoshaChip
+import com.example.step4.ui.components.EmojiBadge
+import com.example.step4.ui.components.ScreenList
+import com.example.step4.ui.components.ScreenTitle
+import com.example.step4.ui.components.SectionLabel
+import com.example.step4.ui.components.TridoshaButton
+import com.example.step4.ui.components.TridoshaCard
+import com.example.step4.ui.components.accentColor
+import com.example.step4.ui.components.softColor
+import com.example.step4.ui.theme.AppTheme
 
 // ───────────────────────────── More ─────────────────────────────
 

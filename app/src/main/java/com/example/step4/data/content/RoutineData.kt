@@ -1,7 +1,7 @@
-package com.tridosha.balance.data.content
+package com.example.step4.data.content
 
-import com.tridosha.balance.data.model.Dosha
-import com.tridosha.balance.data.model.RoutinePeriod
+import com.example.step4.data.model.Dosha
+import com.example.step4.data.model.RoutinePeriod
 
 internal object RoutineData {
 

@@ -1,4 +1,4 @@
-package com.tridosha.balance.navigation
+package com.example.step4.navigation
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.AnimatedContent
@@ -31,18 +31,19 @@ import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.tridosha.balance.data.SettingsStore
-import com.tridosha.balance.data.content.FoodData
-import com.tridosha.balance.ui.components.LocalAnimationsEnabled
-import com.tridosha.balance.ui.screens.food.FoodCategoryScreen
-import com.tridosha.balance.ui.screens.food.FoodScreen
-import com.tridosha.balance.ui.screens.home.HomeScreen
-import com.tridosha.balance.ui.screens.more.AboutScreen
-import com.tridosha.balance.ui.screens.more.MoreScreen
-import com.tridosha.balance.ui.screens.more.MyDoshaScreen
-import com.tridosha.balance.ui.screens.more.SettingsScreen
-import com.tridosha.balance.ui.screens.routine.RoutineScreen
-import com.tridosha.balance.ui.theme.AppTheme
+import com.example.step4.data.SettingsStore
+import com.example.step4.data.content.FoodData
+import com.example.step4.ui.theme.AppTheme
+import com.example.step4.ui.components.LocalAnimationsEnabled
+import com.example.step4.ui.screens.food.FoodCategoryScreen
+import com.example.step4.ui.screens.food.FoodScreen
+import com.example.step4.ui.screens.home.HomeScreen
+import com.example.step4.ui.screens.more.AboutScreen
+import com.example.step4.ui.screens.more.MoreScreen
+import com.example.step4.ui.screens.more.MyDoshaScreen
+import com.example.step4.ui.screens.more.SettingsScreen
+import com.example.step4.ui.screens.routine.RoutineScreen
+
 
 /** What is currently on screen: a tab, optionally with a detail page opened on top of it. */
 private data class Destination(val tab: MainTab, val detail: DetailRoute?)

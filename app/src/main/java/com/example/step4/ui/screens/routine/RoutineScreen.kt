@@ -1,4 +1,5 @@
-package com.tridosha.balance.ui.screens.routine
+package com.example.step4.ui.screens.routine
+
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -22,18 +23,18 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.tridosha.balance.data.content.RoutineData
-import com.tridosha.balance.data.model.RoutinePeriod
-import com.tridosha.balance.ui.components.BulletList
-import com.tridosha.balance.ui.components.DoshaChip
-import com.tridosha.balance.ui.components.EmojiBadge
-import com.tridosha.balance.ui.components.ExpandChevron
-import com.tridosha.balance.ui.components.ExpandSection
-import com.tridosha.balance.ui.components.ScreenList
-import com.tridosha.balance.ui.components.ScreenTitle
-import com.tridosha.balance.ui.components.SectionLabel
-import com.tridosha.balance.ui.theme.AppTheme
-import com.tridosha.balance.ui.components.TridoshaCard
+import com.example.step4.data.content.RoutineData
+import com.example.step4.data.model.RoutinePeriod
+import com.example.step4.ui.components.BulletList
+import com.example.step4.ui.components.DoshaChip
+import com.example.step4.ui.components.EmojiBadge
+import com.example.step4.ui.components.ExpandChevron
+import com.example.step4.ui.components.ExpandSection
+import com.example.step4.ui.components.ScreenList
+import com.example.step4.ui.components.ScreenTitle
+import com.example.step4.ui.components.SectionLabel
+import com.example.step4.ui.components.TridoshaCard
+import com.example.step4.ui.theme.AppTheme
 import java.time.LocalDateTime
 
 @Composable
@@ -46,7 +47,7 @@ internal fun RoutineScreen(padding: PaddingValues) {
                 subtitle = "Dinacharya: gentle rhythms for every part of the day.",
             )
         }
-        items(RoutineData.periods, key = { it.id }) { period ->
+        items(RoutineData.periods, { it.id }) { period ->
             RoutineCard(period = period, isNow = period.id == currentId)
         }
         item(key = "note") {
@@ -117,8 +118,7 @@ private fun NowPill() {
         text = "NOW",
         style = MaterialTheme.typography.labelMedium,
         color = AppTheme.colors.onDeepSage,
-        modifier = Modifier
-            .background(AppTheme.colors.deepSage, CircleShape)
+        modifier = Modifier.background(AppTheme.colors.deepSage, CircleShape)
             .padding(horizontal = 8.dp, vertical = 2.dp),
     )
 }

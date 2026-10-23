@@ -1,11 +1,11 @@
-package com.tridosha.balance.data.content
+package com.example.step4.data.content
 
-import com.tridosha.balance.data.model.Dosha
-import com.tridosha.balance.data.model.Dosha.KAPHA
-import com.tridosha.balance.data.model.Dosha.PITTA
-import com.tridosha.balance.data.model.Dosha.VATA
-import com.tridosha.balance.data.model.FoodCategory
-import com.tridosha.balance.data.model.FoodItem
+import com.example.step4.data.model.Dosha
+import com.example.step4.data.model.Dosha.KAPHA
+import com.example.step4.data.model.Dosha.PITTA
+import com.example.step4.data.model.Dosha.VATA
+import com.example.step4.data.model.FoodCategory
+import com.example.step4.data.model.FoodItem
 
 internal object FoodData {
 

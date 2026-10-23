@@ -1,4 +1,4 @@
-package com.tridosha.balance.ui.screens.food
+package com.example.step4.ui.screens.food
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.horizontalScroll
@@ -29,20 +29,20 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.tridosha.balance.data.content.FoodData
-import com.tridosha.balance.data.model.Dosha
-import com.tridosha.balance.data.model.FoodCategory
-import com.tridosha.balance.data.model.FoodItem
-import com.tridosha.balance.ui.components.BulletList
-import com.tridosha.balance.ui.components.DetailHeader
-import com.tridosha.balance.ui.components.DisclaimerCard
-import com.tridosha.balance.ui.components.DoshaChip
-import com.tridosha.balance.ui.components.EmojiBadge
-import com.tridosha.balance.ui.components.ScreenList
-import com.tridosha.balance.ui.components.ScreenTitle
-import com.tridosha.balance.ui.components.SectionLabel
-import com.tridosha.balance.ui.components.TridoshaCard
-import com.tridosha.balance.ui.theme.AppTheme
+import com.example.step4.data.content.FoodData
+import com.example.step4.data.model.Dosha
+import com.example.step4.data.model.FoodCategory
+import com.example.step4.data.model.FoodItem
+import com.example.step4.ui.components.BulletList
+import com.example.step4.ui.components.DetailHeader
+import com.example.step4.ui.components.DisclaimerCard
+import com.example.step4.ui.components.DoshaChip
+import com.example.step4.ui.components.EmojiBadge
+import com.example.step4.ui.components.ScreenList
+import com.example.step4.ui.components.ScreenTitle
+import com.example.step4.ui.components.SectionLabel
+import com.example.step4.ui.components.TridoshaCard
+import com.example.step4.ui.theme.AppTheme
 
 private const val FILTER_ALL = "ALL"
 

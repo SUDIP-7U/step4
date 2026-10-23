@@ -1,6 +1,6 @@
-package com.tridosha.balance.data.content
+package com.example.step4.data.content
 
-import com.tridosha.balance.data.model.PausePrompt
+import com.example.step4.data.model.PausePrompt
 import java.time.LocalDate
 
 internal object PauseData {
